@@ -14,6 +14,11 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     UserName = Column(String(250), nullable=False)
     Password = Column(String(250), nullable=False)
+    name = Column(String(250), nullable=False)
+    surname = Column(String(250), nullable=False)
+    phone_number = Column(String(250), nullable=False)
+    email = Column(String(250), nullable=False)
+    inscriptionDate = Column(String(250), nullable=False)
     user_id = Column(Integer, ForeignKey('user.id'))
 
 class Character(Base):
