@@ -19,7 +19,7 @@ class User(Base):
     phone_number = Column(String(250), nullable=False)
     email = Column(String(250), nullable=False)
     inscriptionDate = Column(String(250), nullable=False)
-    user_id = Column(Integer, ForeignKey('user.id'))
+   
 
 class Character(Base):
     __tablename__ = 'character'
@@ -29,7 +29,10 @@ class Character(Base):
     hair_color = Column(String(250), nullable=False)
     eye_color = Column(String(250), nullable=False)
     gender = Column(String(250), nullable=False)
-    favorite_list_id = Column(Integer, ForeignKey('favorite_list.id'))
+    planet_id = Column(Integer, ForeignKey('planet.id'))
+    vehicle_id = Column(Integer, ForeignKey('vehicle.id'))
+
+
 
 class Planet(Base):
     __tablename__ = 'planet'
@@ -38,7 +41,7 @@ class Planet(Base):
     diameter = Column(Integer)
     climate= Column(String(250), nullable=False)
     terrain = Column(String(250), nullable=False)
-    favorite_list_id = Column(Integer, ForeignKey('favorite_list.id'))
+   
 
 class Vehicle(Base):
     __tablename__ = 'vehicle'
@@ -48,7 +51,7 @@ class Vehicle(Base):
     passenger = Column(Integer)
     starships_class = Column(String(250), nullable=False)
     gender = Column(String(250), nullable=False)
-    favorite_list_id = Column(Integer, ForeignKey('favorite_list.id'))
+  
 
 class Favorite_list(Base):
     __tablename__ = 'favorite_list'
