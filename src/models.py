@@ -29,8 +29,6 @@ class Character(Base):
     hair_color = Column(String(250), nullable=False)
     eye_color = Column(String(250), nullable=False)
     gender = Column(String(250), nullable=False)
-    planet_id = Column(Integer, ForeignKey('planet.id'))
-    vehicle_id = Column(Integer, ForeignKey('vehicle.id'))
 
 
 
